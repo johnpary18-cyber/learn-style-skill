@@ -1,0 +1,9 @@
+# Personal, local configuration — never commit
+config.md
+
+# Notes the skill may write when no external vault is configured
+learn-style-notes/
+
+# Env / secrets
+.env
+*.env
