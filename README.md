@@ -42,9 +42,27 @@ Everything works out of the box with sensible fallbacks. To make it yours, copy
 ### Bring your own recent-research tool
 
 The "recent topic" path is designed to be pluggable. Point `recent_research_command`
-at any skill/command you already have that returns fresh information — social scraping
-(ScrapeCreators, etc.), a web-search skill, or your own custom research routine. This
-repo intentionally ships **no** API keys and **no** bundled research provider.
+at any skill/command you already have that returns fresh information — social scraping,
+a web-search skill, or your own custom research routine. This repo intentionally ships
+**no** API keys and **no** bundled research provider.
+
+**Recommended:** the [`/last30days` skill by Matt Van Horn](https://github.com/mvanhorn/last30days-skill)
+— an agent-led search engine that pulls recent posts and engagement from Reddit, X,
+YouTube, TikTok, Instagram, Hacker News, Polymarket, GitHub, and more. It's what
+learn-style's "recent topic" path was built around. Install it separately (it uses
+its own ScrapeCreators API key, which stays in *its* config — never in this repo):
+
+```
+# Claude Code (auto-updates via marketplace):
+/plugin marketplace add mvanhorn/last30days-skill
+/plugin install last30days
+
+# Codex, Cursor, Copilot, Gemini CLI, or any Agent Skills host:
+npx skills add mvanhorn/last30days-skill -g
+```
+
+Then set `recent_research_command: "/last30days"` in your `config.md`. Full setup and
+API-key instructions live in that repo's README.
 
 ### Bring your own notes system
 

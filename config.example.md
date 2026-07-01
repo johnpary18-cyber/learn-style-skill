@@ -7,9 +7,10 @@ Every field is optional — leave a field blank to use the skill's fallback beha
 ```yaml
 # A slash command / skill this skill can invoke to gather recent, trending, or
 # real-time information (used for the "recent topic" path). This is where you plug
-# in your OWN research tool — e.g. a skill backed by the ScrapeCreators API, a
-# social-trends search, a web-search skill, etc. Leave blank to fall back to
-# standard web research that favors sources from the last ~30 days.
+# in your OWN research tool. Recommended: Matt Van Horn's /last30days skill —
+# https://github.com/mvanhorn/last30days-skill (bring your own API key). Any
+# web-search or social-trends skill works too. Leave blank to fall back to standard
+# web research that favors sources from the last ~30 days.
 recent_research_command: ""      # e.g. "/last30days" or "/my-trend-search"
 
 # Absolute path to the folder or note vault where summary notes are saved.
